@@ -1,10 +1,9 @@
-FROM ubuntu:16.04
+FROM java:8
 MAINTAINER kusmirekwiktor@gmail.com
 
 # Upgrade and install necessary packages:
-RUN apt-get update && apt-get upgrade -y &&\
-    apt-get install -y sudo git make build-essential mummer last-align python-numpy python-matplotlib time bwa samtools software-properties-common gnuplot\
-    zlib1g-dev mc wget libatlas-base-dev python-pip python-pandas
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get -y install build-essential wget gnuplot
 
 # Start working in /usr/local
 WORKDIR /usr/local
